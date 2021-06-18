@@ -1,0 +1,4 @@
+[13-Sep-2017 17:27:44 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home2/destub283/app/v1/public/index.php on line 50
+[13-Sep-2017 17:28:06 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home2/destub283/app/v1/public/index.php on line 50
+[13-Sep-2017 17:29:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home2/destub283/app/v1/public/index.php on line 50
+[13-Sep-2017 17:29:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home2/destub283/app/v1/public/index.php on line 50

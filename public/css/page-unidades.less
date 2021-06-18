@@ -1,0 +1,68 @@
+.unidades-banner{
+    background-color: #008bcb;
+    background-image: url(../img/unidades.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 320px;
+    .conteudo{
+        max-width: 1170px;
+        margin: auto;
+        text-align: right;
+        color: white;
+        font-family: Prompt-Light;
+        font-size: 30px;
+        line-height: 34px;
+        text-transform: uppercase;
+        height: 320px;
+        .texto{
+            margin: 0 99px;
+            height: 320px;
+            width: ~"calc(100% - 198px)";
+            position: relative;
+            .txt{
+                position: absolute;
+                right: 0;top:50%;
+                margin-top: -51px * 1.5;
+                z-index: 99;
+                .maior{
+                    font-family: Prompt-Bold;
+                }
+            }
+            .local{
+                background-image: url(../img/local.png);
+                width: 99px;height: 138px;
+                background-size: 100% 100%;
+                position: absolute;
+                right: 0;bottom: 20%;
+                margin-right: -99px / 2;
+                z-index: 50;
+            }
+        }
+    }
+    @media (max-width:550px){
+        height: auto;
+        padding: 20px 0;
+        .conteudo{
+            height: auto;
+            .texto{
+                margin: 0;
+                width: 100%;
+                height: auto;
+                .txt{
+                    margin-top: 0;
+                    text-align: center;
+                    position: static;
+                }
+                .local{
+                    display: none;
+                }
+            }
+        }
+    }
+    @media (max-width:345px){
+        .conteudo{
+            font-size: 30px * .75;
+            line-height: 34px * .75;
+        }
+    }
+}

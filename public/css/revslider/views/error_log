@@ -1,0 +1,2 @@
+[02-Mar-2016 07:27:35 America/Sao_Paulo] PHP Fatal error:  Cannot access self:: when no class scope is active in /home/wwwgoob/public_html/wp-content/plugins/revslider/views/master_view.php on line 6
+[11-Feb-2017 04:08:37 America/Sao_Paulo] PHP Fatal error:  Cannot access self:: when no class scope is active in /home/wwwgoob/public_html/wp-content/plugins/revslider/views/master_view.php on line 6

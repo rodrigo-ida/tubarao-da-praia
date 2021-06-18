@@ -1,0 +1,107 @@
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #282828;
+    z-index: 9999;
+}
+
+header span a {
+    padding: 20px 5px;
+    margin: 0 8px;
+    display: inline-block;
+    color: #b3b3b3;
+}
+
+.logout {
+    border: none;
+    color: white;
+    background-color: #282828;
+    font-size: 18px;
+}
+
+.area-motoboy {
+    margin-top: 85px;
+}
+
+.area-motoboy-pedido {
+    background-color: white;
+    margin: 30px 8px;
+
+    box-shadow: 2px 2px 15px 0px #2b2a2f47;
+    padding: 25px 10px 15px;
+}
+
+.area-motoboy-pedido .order-delivered {
+    color: #323CFF;
+    border: 2px solid;
+    cursor: pointer;
+    position: relative;
+    line-height: 1.2;
+    padding: 15px 20px;
+    display: block;
+    font-size: 18px;
+    background: transparent;
+    float: right;
+}
+
+/* PEDIDO ENTREGUE */
+.area-motoboy-pedido.area-motoboy-pedido-entregue {
+    filter: saturate(0);
+    background-color: #f2f2f8;
+}
+
+.area-motoboy-pedido.area-motoboy-pedido-entregue .order-delivered {
+    float: none;
+    margin: 0 auto;
+    border: none;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+/* eND PEDIDO ENTREGUE */
+
+
+.area-motoboy-pedido h3 {
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* STATUS ON */
+.status-on {
+    border: 1px solid #0cd06c;
+    color: #0cd06c;
+    padding: 10px;
+}
+
+.status-on .status-border {
+    border-radius: 20px;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background: #0cd06c;
+    margin: 0 auto;
+}
+
+/* STATUS OFF */
+.status-off {
+    border: 1px solid #e90e0e;
+    color: #e90e0e;
+    padding: 10px;
+}
+
+.status-off .status-border {
+    border-radius: 20px;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background: #e90e0e;
+    margin: 0 auto;
+    transition: all .2s ease-in;
+}

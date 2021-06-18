@@ -1,0 +1,194 @@
+header{
+	background-color: #800b58;
+	position: fixed;
+	padding-bottom: 20px;
+	width: 100%;
+	top: 0;
+	height: 140px;
+	overflow: hidden;
+	z-index: 1;
+	.status{
+		background-color: #4f073e;
+		text-align: right;
+		margin-bottom: 20px;
+		padding: 10px;
+		font-family: 'Oswald', sans-serif;
+		font-weight: 300;
+		color: #d6c7d2;
+		span,a{
+			font-weight: 500;
+			color: #d6c7d2;
+		}
+		.dot{
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			background-color: #28a745;
+			border-radius: 8px;
+		}
+	}
+	h1{
+		float: left;
+		a{
+			background-image: url(../img/logo.png);
+			width: 101px;
+			height: 62px;
+			display: block;
+		}
+		span{
+			display: none;
+		}
+		@media (max-width: 370px){
+			display: none;
+		}
+	}
+	.pesquisa-produtos{
+		float: left;
+		padding-top: 7px;
+		padding-left: 22px;
+		padding-right: 22px;
+		#produtos{
+			float: left;
+			width: 400px;
+			height: 50px;
+			box-sizing: border-box;
+			padding: 10px 60px 10px 10px;
+			font-size: 23px;
+			font-family: 'Oswald', sans-serif;
+			border: solid 2px #ffffff;
+			outline: none;
+			display: block;
+			border-radius: 25px;
+			&:focus{
+				border: solid 2px #fdec01;
+			}
+		}
+		.enviar{
+			text-indent: -9999px;
+			height: 46px;
+			width: 46px;
+			border-radius: 25px;
+			background-image: url(../img/search.png);
+			background-position: center;
+			background-repeat: no-repeat;
+			border: solid 2px transparent;
+			outline: none;
+			margin-left: -49px;
+			margin-top: 2px;
+			cursor: pointer;
+			float: left;
+			display: block;
+			background-color: #fdec01;
+		}
+	}
+	.pesquisa-pedido{
+		margin-top: 10px;
+		float: right;
+		label{
+			color: #fdec01;
+			font-size: 20px;
+			font-family: 'Oswald', sans-serif;
+			font-weight: 300;
+			height: 40px;
+			line-height: 40px;
+			display: block;
+		}
+		#email{
+			float: left;
+			display: block;
+			font-family: 'Oswald', sans-serif;
+			font-weight: 300;
+			outline: none;
+			font-size: 20px;
+			color: #4c4c4c;
+			width: 190px;
+			height: 40px;
+			border-top-left-radius: 20px;
+			border-bottom-left-radius: 20px;
+			margin: 0;
+			border: solid 2px #e5e5e5;
+			padding: 15px;
+			box-sizing: border-box; 
+			margin-left: 15px;
+			&:focus{
+				border: solid 2px #fdec01;
+			}
+		}
+		.enviar{
+			float: left;
+			display: block;
+			height: 40px;
+			background-color: #fdec01;
+			color: #800b58;
+			line-height: 40px;
+			border: none;
+			border-radius: 20px;
+			font-size: 20px;
+			margin-left: -20px;
+			padding-left: 12px;
+			padding-right: 12px;
+			font-family: 'Oswald', sans-serif;
+			cursor: pointer;
+			outline: none;
+		}
+		div{
+			float: left;
+			display: block;
+		}
+	}
+	@media (min-width: 1121px){
+		.pesquisa-pedido{
+			label{
+				float: left;
+			}
+		}
+	}
+	@media (max-width: 1120px){
+		.pesquisa-pedido{
+			position: relative;
+			div{
+				display: none;
+				&.ativo{
+					display: block;
+					position: absolute;
+					top: 0px;
+					right: -5px;
+					width: 280px;
+				}
+			}
+			label{
+				&.ativo{
+					opacity: 0;
+				}
+			}
+		}
+		.pesquisa-produtos{
+			margin-bottom: 25px;
+			max-width: calc(100% - 390px);
+			width: 100%;
+			#produtos{
+				width: 100%;
+			}
+		}
+	}
+	@media (max-width: 740px){
+		.pesquisa-produtos{
+			display: none;
+		}
+	}
+	@media (max-width: 480px){
+		padding-top: 10px;
+		height: 80px;
+		.status{
+			display: none;
+		}
+		.pesquisa-pedido{
+			#email{
+				width: 150px;
+			}
+			div.ativo{
+				width: 250px;
+			}
+		}
+	}
+}
