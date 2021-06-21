@@ -557,7 +557,8 @@ function gerarSlug($str)
 
 
 
-                                        @if(sizeof($promoProducts) > 0)
+                                        @if(sizeof($promoProducts) > 0 && $showPromoProducts)
+
 
                                         <h2>Promoções</h2>
 

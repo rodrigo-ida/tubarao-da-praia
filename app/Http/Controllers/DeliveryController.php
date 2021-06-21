@@ -105,6 +105,7 @@ class DeliveryController extends Controller
     {
 
         $promoProducts = Product::getPromoProducts($data['id-loja'] ?? null);
+        $showPromoProducts = false;
 
         $data = $request->all();
 
@@ -176,7 +177,7 @@ class DeliveryController extends Controller
 
         $catId = $data['category_id'];
 
-        return view('delivery.index-new-sem-promocao', compact('products', 'categories', 'banner', 'variations', 'catId', 'promoProducts', 'bannerCarrinho'));
+        return view('delivery.index-new', compact('products', 'categories', 'banner', 'variations', 'catId', 'promoProducts', 'showPromoProducts', 'bannerCarrinho'));
     }
 
     public function deliveryProducts(Request $request)
@@ -185,6 +186,8 @@ class DeliveryController extends Controller
         $data = $request->all();
 
         $promoProducts = Product::getPromoProducts($data['id-loja'] ?? null);
+
+        $showPromoProducts = true;
 
         $products = Product::select(
 
@@ -264,7 +267,7 @@ class DeliveryController extends Controller
         // $tax = OrderTax::find($data['cep-id']);
 
         // return view('delivery.index', compact('tax', 'shopName', 'products', 'loja', 'configs', 'categories', 'banner', 'variations', 'promoProducts'));
-        return view('delivery.index-new', compact('products', 'categories', 'banner', 'variations', 'promoProducts', 'bannerCarrinho'));
+        return view('delivery.index-new', compact('products', 'categories', 'banner', 'variations', 'promoProducts', 'showPromoProducts', 'bannerCarrinho'));
     }
 
 
@@ -272,7 +275,7 @@ class DeliveryController extends Controller
     public function deliveryProductsByShop(Request $request, $slug)
     {
 
-        $shops = ['boqueirao', 'tupi', 'mallet'];
+        $shops = ['boqueirao', 'mallet'];
         if (!in_array($slug, $shops)) {
             abort(404);
         }
