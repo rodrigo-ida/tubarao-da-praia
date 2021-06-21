@@ -1,3 +1,12 @@
+<?php
+// if(isset($_GET['submit-pesquisar-produto'])){
+// $query=$_GET['pesquisa-input'];
+// echo $query;
+
+// }
+?>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -133,60 +142,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             
            <div class="pesquisa-produtos clearfix">
-                <input placeholder="Pesquisar..." type="text" id="produtos" />
+               <form action="" method="get" class="form-pesquisar">
 
+                    <input placeholder="Pesquisar..." class="form-pesquisar-input-pesquisar" type="text" id="produtos" name="pesquisa-input" />
+                    <input value="Pesquisar" type="submit" 
+                        id="submit-pesquisar-produto" name="submit-pesquisar-produto" 
+                        class="pesquisa-produto-submit-button">
+                    <input type="button" value="Limpar" class="form-pesquisar-limpar" name="form-pesquisar-limpar">
+
+               </form>
                 {{-- <input class="enviar" type="button" value="Pesquisar" id='botaoPesquisarIndex' style="background-image: url({{ asset('/img/search.png') }});"> --}}
                 {{-- <ul class="pesquisa-resultado" style="display: none;" onclick="kitetsu()"></ul> --}}
             </div>
-    
-        <script>    
-
-          function pesquisa(){
-
-            let formulario = document.querySelector('#produtos');
-
-            formulario.addEventListener('input', function (e) {
-                let produtos = document.querySelectorAll('.item-p')
-                let subtitle = document.querySelectorAll('h2')
-
-                if(formulario.value.length > 0){
-
-                subtitle.forEach( e => e.style.display = 'none')
-
-                produtos.forEach((el, i)=>{
-                    
-                    el.style.display = 'none'
-
-                    if(el.getAttribute('pesquisa').includes(formulario.value))
-                        el.style.display = 'flex'
-
-                })
-
-                }
-                else{
-
-                    subtitle.forEach( e => e.style.display = 'block')
-                    produtos.forEach((el, i)=>{
-
-                        el.style.display = 'flex'
-                    })
 
 
 
-                }
-
-                    // console.log(e)
-
-            })
-        }
-
-        pesquisa();
-
-
-
-        
-        
-        </script>
+            
 
             <div class="pesquisa-pedido clearfix">
                 @if(!preg_match('/loja-/', $_SERVER['REQUEST_URI']))
@@ -267,6 +238,102 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer>
     Desenvolvido pela <a href="https://www.otimaideia.com.br">Ótima Ideia</a>
 </footer>
+
+<?php   if(isset($_GET['pesquisa-input'])){  ?>
+
+    
+    <script>
+
+        function geraSlug(string){
+
+            return  string.toString().toLowerCase()
+            .replace(/[àÀáÁâÂãäÄÅåª]+/g, 'a')       // Special Characters #1
+            .replace(/[èÈéÉêÊëË]+/g, 'e')       	// Special Characters #2
+            .replace(/[ìÌíÍîÎïÏ]+/g, 'i')       	// Special Characters #3
+            .replace(/[òÒóÓôÔõÕöÖº]+/g, 'o')       	// Special Characters #4
+            .replace(/[ùÙúÚûÛüÜ]+/g, 'u')       	// Special Characters #5
+            .replace(/[ýÝÿŸ]+/g, 'y')       		// Special Characters #6
+            .replace(/[ñÑ]+/g, 'n')       			// Special Characters #7
+            .replace(/[çÇ]+/g, 'c')       			// Special Characters #8
+            .replace(/[ß]+/g, 'ss')       			// Special Characters #9
+            .replace(/[Ææ]+/g, 'ae')       			// Special Characters #10
+            .replace(/[Øøœ]+/g, 'oe')       		// Special Characters #11
+            .replace(/[%]+/g, 'pct')       			// Special Characters #12
+            .replace(/\s+/g, '-')           		// Replace spaces with -
+            .replace(/[^\w\-]+/g, '')       		// Remove all non-word chars
+            .replace(/\-\-+/g, '-')         		// Replace multiple - with single -
+            .replace(/^-+/, '')             		// Trim - from start of text
+            .replace(/-+$/, '');            		// Trim - from end of text
+            
+	};
+
+        
+    function limparParametros (){
+
+        
+        let botaoLimpar = document.querySelector('.form-pesquisar-limpar');
+
+        botaoLimpar.addEventListener('click', ()=>{
+
+            window.location.href = 'https://pedidos.tubaraodapraia.com.br/delivery'
+
+        })
+    }
+
+    limparParametros()
+
+    function pesquisa(){
+
+        let formulario = document.querySelector('#produtos');
+        window.$_GET = new URLSearchParams(location.search);
+        let value = $_GET.get('pesquisa-input');
+        let value1 = geraSlug(value);
+
+
+        formulario.value = value1
+
+        let produtos = document.querySelectorAll('.item-p')
+        let subtitle = document.querySelectorAll('h2')
+        
+
+        if(formulario.value.length > 0){
+
+        subtitle.forEach( e => e.style.display = 'none')
+
+        produtos.forEach((el, i)=>{
+            
+            el.style.display = 'none'
+
+            if(el.getAttribute('pesquisa').includes(formulario.value))
+                el.style.display = 'flex'
+
+        })
+
+        }
+        else{
+
+            subtitle.forEach( e => e.style.display = 'block')
+            produtos.forEach((el, i)=>{
+
+                el.style.display = 'flex'
+            })
+
+
+
+        }
+
+
+    }
+
+    pesquisa();
+
+
+
+    </script>
+
+
+<?php } ?>
+
 </body>
 
 </html>

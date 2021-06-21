@@ -414,6 +414,31 @@ body {
   flex: 1 1 130px;
 }
 
+.produtos-banner__info__link-veja-mais{
+
+  padding: 8px;
+  max-width: 255px;
+  background-color: #fdec01;
+  display: block;
+  border: none;
+  border-radius: 20px;
+  font-size: 24px;
+  font-family: 'Oswald', sans-serif;
+  padding: 5px 15px;
+  margin: 30px 0;
+  font-weight: 700;
+  color: #800b58;
+  cursor: pointer;
+
+}
+
+.produtos-banner__info-btn-wrapper{
+  
+  display: flex;
+  
+  justify-content: space-evenly;
+}
+
 @media (max-width: 740px) {
   .produtos-banner__info {
     padding: 65px 0;
@@ -2156,49 +2181,7 @@ header h1 span {
   display: none;
 }
 
-header .pesquisa-produtos {
-  float: left;
-  padding-top: 7px;
-  padding-left: 22px;
-  padding-right: 22px;
-  width: 500px;
-}
 
-header .pesquisa-produtos #produtos {
-  float: left;
-  width: 100%;
-  height: 50px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 10px 60px 10px 10px;
-  font-size: 23px;
-  font-family: 'Oswald', sans-serif;
-  border: solid 2px #ffffff;
-  outline: none;
-  display: block;
-  border-radius: 25px;
-}
-
-header .pesquisa-produtos #produtos:focus {
-  border: solid 2px #fdec01;
-}
-
-header .pesquisa-produtos .enviar {
-  text-indent: -9999px;
-  height: 46px;
-  width: 46px;
-  border-radius: 25px;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: solid 2px transparent;
-  outline: none;
-  margin-left: -49px;
-  margin-top: 2px;
-  cursor: pointer;
-  float: left;
-  display: block;
-  background-color: #fdec01;
-}
 
 header .pesquisa-produtos .pesquisa-resultado {
   width: 100%;
@@ -6584,3 +6567,86 @@ img {
   }
 
 }
+
+header .pesquisa-produtos {
+  float: left;
+  padding-top: 7px;
+  padding-left: 22px;
+  padding-right: 22px;
+  width: 500px;
+}
+
+header .pesquisa-produtos #produtos {
+  float: left;
+  width: 100%;
+  height: 50px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px 60px 10px 10px;
+  font-size: 23px;
+  font-family: 'Oswald', sans-serif;
+  border: solid 2px #ffffff;
+  outline: none;
+  display: block;
+  /* border-radius: 25px; */
+}
+
+header .pesquisa-produtos #produtos:focus {
+  border: solid 2px #fdec01;
+}
+
+header .pesquisa-produtos .enviar {
+  text-indent: -9999px;
+  height: 46px;
+  width: 46px;
+  border-radius: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: solid 2px transparent;
+  outline: none;
+  margin-left: -49px;
+  margin-top: 2px;
+  cursor: pointer;
+  float: left;
+  display: block;
+  background-color: #fdec01;
+}
+
+
+.form-pesquisar{
+  display: flex;
+
+
+}
+
+.form-pesquisar-input-pesquisar{
+
+
+    border-top-left-radius: 25px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 25px;
+}
+
+
+.form-pesquisar-limpar{
+  transform: translateX(-137px);
+    background: none;
+    border: none;
+
+}
+
+.pesquisa-produto-submit-button{
+
+  border: none;
+    background: #FDEC01;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    /* background-image: url(C:\Users\rodri\Desktop\tubaraodapraia\bkp2\v1\public\vendor\resources\views\delivery\img\search.png); */
+    background-image: url('../vendor/resources/views/delivery/img/search.png');
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent;
+}
+
