@@ -414,30 +414,38 @@ body {
   flex: 1 1 130px;
 }
 
-.produtos-banner__info__link-veja-mais{
+.produtos-banner-btn{
 
-  padding: 8px;
   max-width: 255px;
   background-color: #fdec01;
   display: block;
   border: none;
-  border-radius: 20px;
-  font-size: 24px;
   font-family: 'Oswald', sans-serif;
-  padding: 5px 15px;
   margin: 30px 0;
   font-weight: 700;
   color: #800b58;
   cursor: pointer;
-
+  border-radius: 44px;
+  width: 45%;
+  padding: 10px;
 }
+
+
 
 .produtos-banner__info-btn-wrapper{
   
-  display: flex;
   
+  display: flex;
+  align-items: center;
   justify-content: space-evenly;
+  
 }
+@media (max-width: 640px) {
+
+}
+
+
+
 
 @media (max-width: 740px) {
   .produtos-banner__info {
@@ -517,7 +525,7 @@ body {
     font-size: 18px;
   }
 }
-
+/* 
 .produtos-banner__info .btn .add-prod {
   padding: 8px;
   max-width: 255px;
@@ -532,15 +540,15 @@ body {
   font-weight: 700;
   color: #800b58;
   cursor: pointer;
-}
+} */
 
 @media (max-width: 740px) {
-  .produtos-banner__info .btn .add-prod {
+  /* .produtos-banner__info .btn .add-prod {
     height: 35px;
     margin: 10px auto;
     font-size: 14px;
     border-radius: 20px;
-  }
+  } */
 }
 
 .produtos-banner__img {
@@ -2264,11 +2272,6 @@ header .pesquisa-produtos .pesquisa-resultado::-webkit-scrollbar-track:active {
   }
 }
 
-header .pesquisa-pedido {
-  margin-top: 3px;
-  float: right;
-  position: relative;
-}
 
 header .pesquisa-pedido .recuperar-email {
   position: absolute;
@@ -2459,10 +2462,15 @@ header .pesquisa-pedido .enviar {
   outline: none;
 }
 
-header .pesquisa-pedido div {
-  float: left;
-  display: block;
+
+@media (min-width: 767px) {
+  
+  header .pesquisa-pedido div {
+    float: left;
+    display: block;
+  }
 }
+
 
 @media (min-width: 1121px) {
   header .pesquisa-pedido label {
@@ -2476,7 +2484,7 @@ header .pesquisa-pedido div {
   }
 
   header .pesquisa-pedido div {
-    display: none;
+    /* display: none; */
   }
 
   header .pesquisa-pedido div.ativo {
@@ -5508,25 +5516,109 @@ footer a {
   display: block;
 }
 
-.nav-login {
-  float: right;
-  display: block;
-  height: 40px;
-  background-color: #fdec01;
-  color: #800b58;
-  line-height: 40px;
-  border: none;
-  border-radius: 20px;
-  font-size: 20px;
-  margin-left: -20px;
-  padding-left: 12px;
-  padding-right: 12px;
-  font-family: 'Oswald', sans-serif;
-  cursor: pointer;
-  outline: none;
-  margin-top: 10px;
-  font-weight: 300;
+@media screen and (max-width: 767px){
 
+
+.nav-login {
+  
+  
+  display: none;
+  
+}
+.nav-login-mobile {
+
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 22px;
+
+
+}
+
+.header-burger-button{
+
+
+    height: 25px;
+    display: flex ;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 15px;
+
+    background: transparent;
+    border: none;
+    width: 38px;
+
+
+}
+
+.burger-button-line{
+
+    width: 100%;
+    height: 3px;
+    background: white;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.pesquisa-pedido{
+
+  display: flex;
+  margin-top: 10px;
+
+
+}
+
+.header-content{
+  
+  display: flex;
+  justify-content: space-between;
+}
+
+}
+
+
+@media screen and (min-width:767px){
+
+  
+  
+  header .pesquisa-pedido {
+    margin-top: 3px;
+    float: right;
+    position: relative;
+  }
+}
+
+
+
+@media screen and (min-width: 767px){
+
+  .nav-login-mobile {
+
+    display: none;
+  }
+
+
+
+  .nav-login {
+    float: right;
+    display: block;
+    height: 40px;
+    background-color: #fdec01;
+    color: #800b58;
+    line-height: 40px;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    margin-left: -20px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+    outline: none;
+    margin-top: 10px;
+    font-weight: 300;
+
+}
 }
 
 @media (max-width: 380px) {
@@ -6247,11 +6339,11 @@ footer a {
 }
 
 @media (max-width: 740px) {
-  .produtos-banner__info .btn {
+  /* .produtos-banner__info .btn {
     display: block;
     margin: 0 auto;
     margin-top: 15px;
-  }
+  } */
 
   @media (max-width: 1120px) {
     .produtos__lista.ativo {
@@ -6259,12 +6351,12 @@ footer a {
     }
   }
 
-  .produtos-banner__info .btn .add-prod {
+  /* .produtos-banner__info .btn .add-prod {
     border-radius: 44px;
     height: 55px;
     width: 200px;
     font-size: 16px !important;
-  }
+  } */
 }
 
 .product-single__info-btns .qt {

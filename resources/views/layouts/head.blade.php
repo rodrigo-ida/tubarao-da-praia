@@ -107,8 +107,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     
  
+    <script src="https://kit.fontawesome.com/a5eea85f91.js" crossorigin="anonymous"></script>
 
-   
+    
+
     
     
 

@@ -467,9 +467,9 @@ function gerarSlug($str)
 
                                         <div class="btn produtos-banner__info-btn-wrapper">
 
-                                            <input class="add-prod" id="{{ $banner->First()->getProduct->id }}" name="{{ $banner->First()->getProduct->name_product }}" price="{{$banner->First()->getProduct->price_product}}" type="submit" value="PEÇA AGORA">
+                                            <input class="produtos-banner-btn" id="{{ $banner->First()->getProduct->id }}" name="{{ $banner->First()->getProduct->name_product }}" price="{{$banner->First()->getProduct->price_product}}" type="submit" value="PEÇA AGORA">
 
-                                            <a href="https://pedidos.tubaraodapraia.com.br/delivery/produto/combo-03-2-temaki-1-hot-roll-2-cocas-de-220m" class="produtos-banner__info__link-veja-mais">Veja Mais</a>
+                                            <a href="https://pedidos.tubaraodapraia.com.br/delivery/produto/combo-03-2-temaki-1-hot-roll-2-cocas-de-220m" class="produtos-banner-btn">Veja Mais</a>
 
                                         </div>
 

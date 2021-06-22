@@ -1,14 +1,14 @@
 
     <header class="clearfix">
     
-        <div class="container">
+        <div class="container header-content">
             <h1>
                 <a href="/" style="background-image: url({{ asset('/img/logo-beta.png') }});">
                     <span>Tubarão da Praia</span>
                 </a>
             </h1>
 
-            
+
         <div class="pesquisa-produtos clearfix">
             <form action="https://pedidos.tubaraodapraia.com.br/delivery" method="get" class="form-pesquisar">
 
@@ -40,7 +40,7 @@
                     <a href="#" id="recu-email-show"><span class="recuperar-email">Esqueceu seu e-mail?</span></a>
                     
                 </div>
-            </form> -->
+                </form> -->
                 <span class="profile">
                     <span class="profile-img">
                         <?php
@@ -85,7 +85,14 @@
 
             @elseif($_SERVER['REQUEST_URI'] != '/client/area-do-cliente')
 
-            <a href="/client/area-do-cliente"><button class="nav-login">Faça <strong>login</strong> ou <strong>cadastre-se!</strong></button></a>
+            <a href="/client/area-do-cliente" class="login-link"><button class="nav-login">Faça <strong>login</strong> ou <strong>cadastre-se!</strong></button><button class="nav-login-mobile"><i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
+
+            <button class="header-burger-button">
+
+                <span class="burger-button-line"></span>
+                <span class="burger-button-line"></span>
+                <span class="burger-button-line"></span>
+            </button>
 
             @endif
             @endif
