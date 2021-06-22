@@ -6,12 +6,25 @@
 $day = date('w');
 
 ?>
-<style>
+
+{{-- STYLE AQUI POIS DEVE SER ESPECIFICO APENAS PARA ESSA PAGINA   --}}
+
+
+<style> 
     .produtos__lista {
-        top: 80px;
-        height: calc(100% - 80px);
+        /* height: calc(100% - 80px); */
         z-index: 1;
         padding: 10px;
+
+
+        position: fixed !important;
+        bottom: 0px;
+        right: 0px;
+        height: 60%;
+        background-color: rgba(240,240,240,.3);
+
+
+
     }
 
     .produtos__lista .valores div {
@@ -40,7 +53,7 @@ $day = date('w');
         z-index: 999 !important;
         -webkit-box-shadow: 1px 6px 10px 0 rgba(90, 81, 93, 0.25);
         box-shadow: 1px 6px 10px 0 rgba(90, 81, 93, 0.25);
-        display: block !important;
+        /* display: block !important; */
         width: 70px;
         height: 70px;
         background-position: center;
@@ -57,40 +70,12 @@ $day = date('w');
         -o-transition: transform ease-in-out 0.2s;
         transition: transform ease-in-out 0.2s;
         transition: transform ease-in-out 0.2s, -webkit-transform ease-in-out 0.2s;
+        display: none;
+        
+
     }
 
-    .produtos__lista {
-        position: fixed !important;
-        top: 105px;
-        right: -350px;
-        height: calc(100% - 105px);
-        -webkit-transition: right ease-in-out 0.2s;
-        -o-transition: right ease-in-out 0.2s;
-        transition: right ease-in-out 0.2s;
-    }
-
-    .produtos__lista.ativo {
-        right: 0px;
-    }
-
-    .produtos__bg.ativo {
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    .produtos__bg {
-        display: block !important;
-        position: fixed;
-        left: 100%;
-        top: 105px;
-        height: calc(100% - 105px);
-        width: 100%;
-        background-color: transparent;
-        -webkit-transition: background-color ease-in-out 0.2s;
-        -o-transition: background-color ease-in-out 0.2s;
-        transition: background-color ease-in-out 0.2s;
-    }
-
+    
     .produtos__action.active span {
         -webkit-animation: popIn .3s forwards;
         animation: popIn .3s forwards;
@@ -122,15 +107,44 @@ $day = date('w');
         transform: scale(0.9, 0.9);
     }
 
-    .produtos__action {
-        cursor: pointer;
-    }
-
     .produtos__action:hover {
         -webkit-transform: scale(1.1, 1.1);
         -ms-transform: scale(1.1, 1.1);
         transform: scale(1.1, 1.1);
     }
+
+    /* .produtos__lista {
+        position: fixed !important;
+        top: 105px;
+        right: -350px;
+        height: calc(100% - 105px);
+        -webkit-transition: right ease-in-out 0.2s;
+        -o-transition: right ease-in-out 0.2s;
+        transition: right ease-in-out 0.2s;
+    } */
+
+    .produtos__lista.ativo {
+        right: 0px;
+    }
+
+    .produtos__bg.ativo {
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .produtos__bg {
+        display: block !important;
+        position: fixed;
+        left: 100%;
+        top: 105px;
+        height: calc(100% - 105px);
+        width: 100%;
+        background-color: transparent;
+        -webkit-transition: background-color ease-in-out 0.2s;
+        -o-transition: background-color ease-in-out 0.2s;
+        transition: background-color ease-in-out 0.2s;
+    }
+
 
     .carrinho-vazio {
         padding: 40px;
@@ -164,6 +178,14 @@ $day = date('w');
         font-weight: 300;
         font-size: 18px;
     }
+
+    .saiba-mais__carrinho__addItem, .saiba-mais__carrinho__removeItem{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+ 
 </style>
 <div class="escolher">
 
@@ -197,7 +219,58 @@ $day = date('w');
         </span>
     </div>
 </div>
+
 <section class="product-single">
+
+
+        <div class="produtos__lista" data-margin-top="110">
+            <div class="produtos-header">
+                <img src="{{ asset('/img/carrinho-header.svg') }}" alt="">
+                <span>Seu carrinho</span>
+            </div>
+            <div class="titulo clearfix">
+                <span>Qtd.</span>
+                <span>Produto</span>
+                <span>Total R$</span>
+            </div>
+            <form>
+                <div class="item clearfix list-products" style="max-height: 120px;">
+                    <div class="carrinho-vazio" style="">
+                        <img src="{{ asset('/img/sad.svg') }}">
+                        <h3>Seu carrinho está vazio.</h3>
+                        <p>Que tal iniciar seu pedido?</p>
+                    </div>
+                </div>
+                <!--  <div class=" valores" style="background-color: #f1f1f1;">
+                        <div class="clearfix">
+                            <span>Sub-Total:</span>
+                            <span id="subtotal-carrinho">0,00</span>
+                        </div>
+                        <div class="clearfix">
+                            <span>Taxa de entrega:</span>
+                            <span id="tx-entrega"></span>
+                        </div>
+                    </div>-->
+                <!-- <div class="valores clearfix">
+                <span>Tempo de entrega estimado</span>
+                <span>
+                </span>
+            </div> -->
+                <div class="comprar">
+                    <label for="obs">Obs:</label>
+                    <textarea id="obs"></textarea>
+                    <div class="clearfix">
+                        <span>
+                            TOTAL
+                        </span>
+                        <span id="total-carrinho">0,00</span>
+                    </div>
+                    <a href="#"><input type="button" value="Finalizar pedido" id="Finalizar-pedido"></a>
+                </div>
+            </form>
+        </div>
+
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-5 product-single__img ">
@@ -231,56 +304,11 @@ $day = date('w');
                         @else
                         {{ number_format($product->First()->price_product, 2, ",", ".") }}
                         @endif</span>
+
+                    
                     <div class="produtos__bg"></div>
                     <div style="background-image: url('/img/carrinho-mobile.svg')" class="produtos__action active"><span style="z-index: 1">0</span></div>
-                    <div class="produtos__lista">
-                        <div class="produtos__lista" data-margin-top="110">
-                            <div class="produtos-header">
-                                <img src="{{ asset('/img/carrinho-header.svg') }}" alt="">
-                                <span>Seu carrinho</span>
-                            </div>
-                            <div class="titulo clearfix">
-                                <span>Qtd.</span>
-                                <span>Produto</span>
-                                <span>Total R$</span>
-                            </div>
-                            <form>
-                                <div class="item clearfix list-products" style="max-height: 120px;">
-                                    <div class="carrinho-vazio" style="">
-                                        <img src="{{ asset('/img/sad.svg') }}">
-                                        <h3>Seu carrinho está vazio.</h3>
-                                        <p>Que tal iniciar seu pedido?</p>
-                                    </div>
-                                </div>
-                                <!--  <div class=" valores" style="background-color: #f1f1f1;">
-                                        <div class="clearfix">
-                                            <span>Sub-Total:</span>
-                                            <span id="subtotal-carrinho">0,00</span>
-                                        </div>
-                                        <div class="clearfix">
-                                            <span>Taxa de entrega:</span>
-                                            <span id="tx-entrega"></span>
-                                        </div>
-                                    </div>-->
-                                <!-- <div class="valores clearfix">
-                                <span>Tempo de entrega estimado</span>
-                                <span>
-                                </span>
-                            </div> -->
-                                <div class="comprar">
-                                    <label for="obs">Obs:</label>
-                                    <textarea id="obs"></textarea>
-                                    <div class="clearfix">
-                                        <span>
-                                            TOTAL
-                                        </span>
-                                        <span id="total-carrinho">0,00</span>
-                                    </div>
-                                    <a href="#"><input type="button" value="Finalizar pedido" id="Finalizar-pedido"></a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="product-single__info-btns row align-items-center">
 

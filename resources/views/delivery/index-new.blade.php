@@ -559,7 +559,6 @@ function gerarSlug($str)
 
                                         @if(sizeof($promoProducts) > 0 && $showPromoProducts)
 
-
                                         <h2>Promoções</h2>
 
                                             <div class="clearfix" id="promocoes-container">
@@ -1218,37 +1217,6 @@ function gerarSlug($str)
 
                                     </div>
 
-                                    <style>
-                                        @media (min-width: 1120px) {
-
-                                            .produtos__lista {
-
-                                                border: none;
-
-                                            }
-
-
-
-                                            .produtos__lista--fixed {
-
-                                                position: fixed;
-
-                                                width: 350px;
-
-                                                max-width: 350px;
-
-                                                padding: 0 10px 10px;
-
-                                                border-left: solid 1px #f1f1f1;
-
-                                                border-right: solid 1px #f1f1f1;
-
-                                                border-bottom: solid 1px #f1f1f1;
-
-                                            }
-
-                                        }
-                                    </style>
 
                                     <div class="produtos__bg"></div>
 

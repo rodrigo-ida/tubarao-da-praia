@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -8,9 +9,13 @@
 
 <script src="{{ asset('/js/delivery.js') }}"></script>
 
+<script src="{{ asset('/js/delivery-first.js') }}"></script>
+
+<script src="{{ asset('/js/recu-email.js') }}"></script>
+
 <script src="{{ asset('/js/jquery.mask.min.js') }}"></script>
 
-
+<script src="{{ asset('/js/delivery-scripts.js') }}"></script>
 @endpush
 
 @push('styles')
@@ -81,7 +86,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <script src="{{ asset('/js/delivery-scripts.js') }}"></script> -->
 
-    <script>
+<script>
         jQuery(document).ready(function() {
             jQuery('.pesquisa-pedido').click(function() {
                 jQuery('.pesquisa-pedido div').addClass('ativo');
@@ -116,26 +121,3 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6QLJZP"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
-
-    @include('layouts.header')
-
-
-    <div style="display:none;" id="div-loading" class="loading"><span>
-            <div class="loader"></div>
-        </span></div>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6QLJZP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-    @yield("content")
-
-</body>
-@yield("footer-scripts")
-
-</div>
-
-<footer>
-    Desenvolvido pela <a href="https://www.otimaideia.com.br">Ótima Ideia</a>
-</footer>
-</body>
-
-</html>

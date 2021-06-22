@@ -65,9 +65,9 @@ function addToCart(){
 			var html = `
 				<div class="itens clearfix prod" p=${i.id} ${cmp}>
 					<span p="${i.id}" name="${i.nome}" price="${i.preco}" class="clearfix">
-						<div class="addItem">+</div>
+						<div class="addItem saiba-mais__carrinho__addItem">+</div>
 						<input disabled class="qt" type='number' value='${i.qtd}'>
-						<div class="remItem">-</div>
+						<div class="remItem saiba-mais__carrinho__removeItem">-</div>
 					</span>
 					<span>${i.nome}</span>
 					<span p=${i.id} id='total'>
@@ -369,9 +369,9 @@ function inicializacao(){
 			var html = `
 				<div class="itens clearfix prod" p=${i.id} ${cmp}>
 					<span p="${i.id}" name="${i.nome}" price="${i.preco}" class="clearfix">
-						<div class="addItem">+</div>
+						<div class="addItem saiba-mais__carrinho__addItem">+</div>
 						<input disabled class="qt" type='number' value='${i.qtd}'>
-						<div class="remItem">-</div>
+						<div class="remItem saiba-mais__carrinho__addItem">-</div>
 					</span>
 					<span>${i.nome}</span>
 					<span p=${i.id} id='total'>
@@ -830,9 +830,9 @@ function adicionarComplemento(produtosLista,complementosLista){
 	var html = `
 		<div class="itens clearfix prod" p=${idProduto} comp="${complTotal}">
 			<span p="${idProduto}" name="${nomeProduto}" price="${preco}" class="clearfix">
-				<div class="addItem">+</div>
+				<div class="addItem saiba-mais__carrinho__addItem">+</div>
 				<input disabled class="qt" type='number' value='1'>
-				<div class="remItem">-</div>
+				<div class="remItem saiba-mais__carrinho__addItem">-</div>
 			</span>
 			<span>${nomeProduto}</span>
 			<span p=${idProduto} id='total'>
