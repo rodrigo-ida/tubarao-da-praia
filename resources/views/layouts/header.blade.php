@@ -85,14 +85,11 @@
 
             @elseif($_SERVER['REQUEST_URI'] != '/client/area-do-cliente')
 
-            <a href="/client/area-do-cliente" class="login-link"><button class="nav-login">Faça <strong>login</strong> ou <strong>cadastre-se!</strong></button><button class="nav-login-mobile"><i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
+            <a href="/client/area-do-cliente" class="login-link"><button class="nav-login">Faça <strong>login</strong> ou <strong>cadastre-se!</strong> </button></a>
 
-            <button class="header-burger-button">
+            {{-- <i class="fa fa-search" aria-hidden="true"></i> --}}
+        {{--<button class="nav-login-mobile"><i class="fa fa-sign-in" aria-hidden="true"></i></button> --}}
 
-                <span class="burger-button-line"></span>
-                <span class="burger-button-line"></span>
-                <span class="burger-button-line"></span>
-            </button>
 
             @endif
             @endif
